@@ -1,15 +1,98 @@
-/*
- * This is a manifest file that'll be compiled into application.css, which will include all the files
- * listed below.
- *
- * Any CSS (and SCSS, if configured) file within this directory, lib/assets/stylesheets, or any plugin's
- * vendor/assets/stylesheets directory can be referenced here using a relative path.
- *
- * You're free to add application-wide styles to this file and they'll appear at the bottom of the
- * compiled file so the styles you add here take precedence over styles defined in any other CSS
- * files in this directory. Styles in this file should be added after the last require_* statement.
- * It is generally better to create a new file per style scope.
- *
- *= require_tree .
- *= require_self
- */
+/* Estilos para o layout e os botões */
+.notice {
+    background-color: #e8f4e5;
+    color: #2e7d32;
+    padding: 10px;
+    margin-bottom: 20px;
+    border: 1px solid #c8e6c9;
+    border-radius: 5px;
+  }
+  
+  .actions {
+    margin-top: 20px;
+  }
+  
+  .button {
+    background-color: #4CAF50;
+    color: white;
+    padding: 8px 12px;
+    text-align: center;
+    text-decoration: none;
+    display: inline-block;
+    font-size: 16px;
+    border-radius: 5px;
+    margin-right: 5px;
+    border: none;
+    cursor: pointer;
+  }
+  
+  .button:hover {
+    background-color: #45a049;
+  }
+  
+  .edit-button {
+    background-color: #2196F3;
+  }
+  
+  .edit-button:hover {
+    background-color: #1e88e5;
+  }
+  
+  .back-button {
+    background-color: #6c757d;
+  }
+  
+  .back-button:hover {
+    background-color: #5a6268;
+  }
+  
+  .delete-button {
+    background-color: #f44336;
+  }
+  
+  .delete-button:hover {
+    background-color: #e53935;
+  }
+  
+  .comment {
+    background-color: #f2f2f2;
+    padding: 10px;
+    margin: 10px 0;
+    border-radius: 5px;
+  }
+  
+  .comment-action {
+    font-size: 14px;
+  }
+  
+  .comment-action.edit-link {
+    color: #2196F3;
+  }
+  
+  .comment-action.delete-link {
+    color: #f44336;
+  }
+  
+  .comment-textarea {
+    width: 100%;
+    height: 100px;
+    border-radius: 5px;
+    padding: 10px;
+  }
+  
+  .submit-comment-button {
+    background-color: #4CAF50;
+    color: white;
+    padding: 8px 12px;
+    font-size: 16px;
+    border-radius: 5px;
+    border: none;
+    cursor: pointer;
+  }
+  
+  .submit-comment-button:hover {
+    background-color: #45a049;
+  }
+  
+  
+  

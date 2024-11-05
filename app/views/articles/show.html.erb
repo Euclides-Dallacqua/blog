@@ -1,0 +1,36 @@
+<p style="color: green"><%= notice %></p>
+
+<%= render @article %>
+
+<div>
+  <%= link_to "Editar artigo", edit_article_path(@article) %> |
+  <%= link_to "Voltar aos artigos", articles_path %>
+
+  <%= button_to "Excluir artigo", @article, method: :delete %>
+</div>
+
+<h2>Comentários</h2>
+<% @article.comments.each do |comment| %>
+  <p><strong><%= comment.user.email %>:</strong> <%= comment.content %></p>
+  <% if comment.user == current_user %>
+    <%= link_to "Editar", edit_article_comment_path(@article, comment) %> |
+    <%= link_to "Excluir", article_comment_path(@article, comment), method: :delete, data: { confirm: "Tem certeza?" } %>
+    <%= link_to("Excluir2", article_comment_path(@article, comment), data: {turbo_confirm: 'Are you sure?' , turbo_method: :delete }) %>
+  <% end %>
+<% end %>
+
+<% if user_signed_in? %>
+  <h3>Adicionar um comentário:</h3>
+  <%= form_with(model: [@article, @article.comments.build], local: true) do |form| %>
+    <div class="field">
+      <%= form.label :content, "Comentário" %><br>
+      <%= form.text_area :content %>
+    </div>
+    <div class="actions">
+      <%= form.submit "Postar Comentário" %>
+    </div>
+  <% end %>
+<% else %>
+  <p><%= link_to "Log in", new_user_session_path %> para adicionar um comentário.</p>
+<% end %>
+

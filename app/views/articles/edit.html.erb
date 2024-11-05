@@ -1,0 +1,15 @@
+<% content_for :title, "Editando artigo" %>
+
+<!-- Título principal estilizado -->
+<h1 class="page-title">Editando Artigo</h1>
+
+<!-- Formulário de Edição do Artigo -->
+<div class="article-form">
+  <%= render "form", article: @article %>
+</div>
+
+<div class="navigation-buttons">
+  <%= link_to "Mostrar este artigo", @article, class: "button show-button" %> |
+  <%= link_to "Voltar aos artigos", articles_path, class: "button back-button" %>
+</div>
+
