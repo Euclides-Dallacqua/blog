@@ -1,0 +1,27 @@
+<%= form_with(model: article) do |form| %>
+  <% if article.errors.any? %>
+    <div class="alert alert-danger">
+      <h2><%= pluralize(article.errors.count, "erro") %> ao salvar esse Artigo:</h2>
+      <ul>
+        <% article.errors.each do |error| %>
+          <li><%= error.full_message %></li>
+        <% end %>
+      </ul>
+    </div>
+  <% end %>
+
+  <div class="form-group">
+    <%= form.label :title, class: "form-label" %>
+    <%= form.text_field :title, class: "form-control" %>
+  </div>
+
+  <div class="form-group">
+    <%= form.label :body, class: "form-label" %>
+    <%= form.text_area :body, class: "form-control" %>
+  </div>
+
+  <div class="form-group">
+    <%= form.submit "Salvar Artigo", class: "btn btn-primary" %>
+  </div>
+<% end %>
+

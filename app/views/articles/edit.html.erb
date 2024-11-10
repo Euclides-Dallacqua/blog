@@ -1,0 +1,13 @@
+<% content_for :title, "Editando Artigo" %>
+<h1 class="page-title">Editando Artigo</h1>
+
+<div class="article-form">
+  <%= render "form", article: @article %>
+</div>
+
+<div class="navigation-buttons">
+  <%= link_to "Mostrar este artigo", @article, class: "btn btn-light" %> |
+  <%= link_to "Voltar aos artigos", articles_path, class: "btn btn-dark" %>
+</div>
+
+

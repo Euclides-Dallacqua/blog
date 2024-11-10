@@ -1,0 +1,24 @@
+<p style="color: green"><%= notice %></p>
+<% content_for :title, "Artigos" %>
+
+<h1>Projeto de Criação de Artigos</h1>
+
+<%= link_to "Novo Artigo", new_article_path, class: "btn btn-primary" if current_user %>
+
+<ul>
+  <% @articles.each do |article| %>
+    <li>
+      <h2><%= link_to article.title, article, class: "article-link" %></h2>
+      <p><%= truncate(article.body, length: 100) %></p>
+      <p>
+        <% if current_user && current_user.id == article.user_id %>
+          <%= link_to "Editar", edit_article_path(article), class: "btn btn-warning" %>
+          <%= link_to "Excluir", article_path(article), method: :delete, data: { confirm: "Tem certeza que deseja excluir este artigo?" }, class: "btn btn-danger" %>
+        <% end %>
+      </p>
+    </li>
+  <% end %>
+</ul>
+
+
+
